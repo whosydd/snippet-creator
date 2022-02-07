@@ -16,7 +16,7 @@ export default () => {
   if (!code.match(/\w+/)) throw new Error(`Selected code is empty.`)
 
   // 格式化
-  const format = code.replace(/\n/g, '\\n')
+  const format = code.replace(/\n/g, '\\n').replace(/"/g, '\\"').replace(/\t/g, '\\t')
 
   // 写入剪切板
   vscode.env.clipboard
